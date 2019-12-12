@@ -1,1 +1,1 @@
-export {FETCH_COMIC_START} from './comicActions';
+export {getComic, FETCH_COMIC_START} from './comicActions';
