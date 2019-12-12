@@ -5,7 +5,7 @@ import Loader from 'react-loader-spinner';
 import {getComic} from '../actions';
 
 const Comic = props => {
-
+    console.log('props from Comic file', props)
     return (
         <div>
             <h1>XKCD is the Future, and the Future is NOW!</h1>
@@ -20,6 +20,7 @@ const Comic = props => {
                 width={80} />
             
             ) }
+            {props.comic && <img src = {props.comic.img} alt = {props.comic.alt} />}
             <button onClick = {props.getComic}>Current XKCD Comic!</button>
         </div>
     )
