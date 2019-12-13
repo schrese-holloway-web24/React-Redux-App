@@ -5,7 +5,7 @@ export const FETCH_NEXT_COMIC_SUCCESS = "FETCH_NEXT_COMIC_SUCCESS";
 export const FETCH_NEXT_COMIC_FAILURE = "FETCH_NEXT_COMIC_FAILURE"
 
 
-export const getNextComic = () => dispatch => {
+export const getNextComic = (num) => dispatch => {
 
     dispatch({type: FETCH_NEXT_COMIC_START})
     axios   
