@@ -1,1 +1,3 @@
 export {getComic, FETCH_COMIC_START, FETCH_COMIC_SUCCESS, FETCH_COMIC_FAILURE} from './comicActions';
+
+export {getCurrentComic, FETCH_CURRENT_COMIC_START, FETCH_CURRENT_COMIC_SUCCESS, FETCH_CURRENT_COMIC_FAILURE} from './currentComicActions';

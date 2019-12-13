@@ -2,15 +2,22 @@ import React from 'react';
 import {connect} from 'react-redux';
 import Loader from 'react-loader-spinner';
 //actions
-import {getComic} from '../actions';
+import {getComic, getCurrentComic} from '../actions';
+
+//components
+import CurrentComic from './CurrentComic';
 
 const Comic = props => {
     console.log('props from Comic file', props)
+
+    
+
     return (
         <div>
-            <h1>XKCD is the Future, and the Future is NOW!</h1>
+            
             {!props.comic && !props.isFetching && 
-                <p>Click to get the current comic!</p>
+                // <p>Click to get the current comic!</p>
+                <CurrentComic />
             }
             {props.isFetching && (
             <Loader 
@@ -21,7 +28,11 @@ const Comic = props => {
             
             ) }
             {props.comic && <img src = {props.comic.img} alt = {props.comic.alt} />}
-            <button onClick = {props.getComic}>Current XKCD Comic!</button>
+            <div>
+            <button onClick = {props.getComic}>Random</button>
+            <button onClick = {props.getCurrentComic}>Current Comic</button>
+            </div>
+            
         </div>
     )
 }
@@ -34,4 +45,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {getComic})(Comic);
+export default connect(mapStateToProps, {getComic, getCurrentComic})(Comic);
